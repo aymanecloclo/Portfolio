@@ -20,7 +20,8 @@ const Presentation = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
         data-aos="fade-right"
-        className=" lg:px-24 flex lg:flex-row w-full lg:h-[60vh] justify-center flex-col  lg:gap-24 lg:mt-48 mt-24"
+   
+        className=" overflow-hidden relative lg:px-24 flex lg:flex-row w-full lg:h-[60vh] justify-center flex-col  lg:gap-24 lg:mt-48 mt-24"
       >
         {/* Texte et badges */}
         <motion.div
@@ -63,7 +64,7 @@ const Presentation = () => {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8,}}
+            transition={{ duration: 0.8 }}
             className="flex gap-2 mt-3"
           >
             <a
@@ -138,7 +139,7 @@ const Presentation = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration:0.8  }}
+          transition={{ duration: 0.8 }}
           className="flex items-center order-1 px-10 lg:w-full 2xl:w-1/2"
         >
           <DotLottieReact

@@ -8,7 +8,7 @@ const AboutMe = () => {
 
   return (
     <>
-      <div id="about" className="flex flex-col mt-24">
+      <div id="about" className="flex flex-col mt-24 overflow-hidden relative ">
         <div className="bg-[#F4FAFF] dark:bg-[#D5EFFF] text-[#113264] lg:h-[80vh] 3xl:px-48 lg:px-24 flex lg:flex-row flex-col lg:justify-between items-center">
           {/* Animation for the image (coming from the left) */}
           <motion.div

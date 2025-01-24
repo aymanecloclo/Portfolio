@@ -82,61 +82,60 @@ const skillsData = [
 
 const Skills = () => {
   return (
-  
-<section className="lg:p-10 px-5">
-  <h2 className="text-4xl font-extrabold text-[#113264] dark:text-[#F4FAFF] bg-transparent text-center mb-12">
-    My Skills
-  </h2>
+    <section className="lg:p-10 px-5 overflow-hidden relative ">
+      <h2 className="text-4xl font-extrabold text-[#113264] dark:text-[#F4FAFF] bg-transparent text-center mb-12">
+        My Skills
+      </h2>
 
-  {skillsData.map((category, index) => (
-    <motion.div
-      key={index}
-      className="mb-12 md:mx-24"
-      initial={{ opacity: 0 }} // Start from hidden
-      whileInView={{ opacity: 1 }} // Fade in when in view
-      transition={{ duration: 0.8 }} // Duration of the fade effect
-    >
-      <motion.h3
-        className="text-3xl font-semibold text-[#113264] dark:text-[#cbd5e1] text-center mb-8"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        {category.category}
-      </motion.h3>
-
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-center items-center">
-        {category.skills.map((skill, idx) => (
-          <motion.div
-            key={idx}
-            className="h-[200px] min-w-[150px] p-6 bg-[#FBFDFF] dark:bg-[#2d3748] text-[#113264] dark:text-[#e2e8f0] rounded-xl shadow-lg flex flex-col items-center justify-center"
-            initial={{ opacity: 0, rotateY: -180 }} // Start with flipped state
-            whileInView={{ opacity: 1, rotateY: 0 }} // Flip to front when in view
-            transition={{
-              duration: 0.9,
-              delay: idx * 0.1,
-              type: "spring",
-              stiffness: 100, // Give a spring effect for the flip
-            }}
-            whileHover={{ rotateY: 180 }} // Flip when hovered
+      {skillsData.map((category, index) => (
+        <motion.div
+          key={index}
+          className="mb-12 md:mx-24"
+          initial={{ opacity: 0 }} // Start from hidden
+          whileInView={{ opacity: 1 }} // Fade in when in view
+          transition={{ duration: 0.8 }} // Duration of the fade effect
+        >
+          <motion.h3
+            className="text-3xl font-semibold text-[#113264] dark:text-[#cbd5e1] text-center mb-8"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
           >
-            <motion.img
-              src={skill.logo}
-              alt={`${skill.name} logo`}
-              className="py-5 w-20 h-20 sm:w-24 sm:h-24 mb-4 rounded-full border-4 border-gray-300 dark:border-[#4a5568] shadow-md object-contain"
-              initial={{ rotateY: 180 }} // Keep the icon initially flipped
-              whileHover={{ rotateY: 0 }} // Return to normal on hover
-              transition={{ duration: 0.3 }}
-            />
-            <p className="font-medium text-[#113264] dark:text-[#e2e8f0] text-center text-xs sm:text-base">
-              {skill.name}
-            </p>
-          </motion.div>
-        ))}
-      </div>
-    </motion.div>
-  ))}
-</section>
+            {category.category}
+          </motion.h3>
+
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-center items-center">
+            {category.skills.map((skill, idx) => (
+              <motion.div
+                key={idx}
+                className="h-[200px] min-w-[150px] p-6 bg-[#FBFDFF] dark:bg-[#2d3748] text-[#113264] dark:text-[#e2e8f0] rounded-xl shadow-lg flex flex-col items-center justify-center"
+                initial={{ opacity: 0, rotateY: -180 }} // Start with flipped state
+                whileInView={{ opacity: 1, rotateY: 0 }} // Flip to front when in view
+                transition={{
+                  duration: 0.9,
+                  delay: idx * 0.1,
+                  type: "spring",
+                  stiffness: 100, // Give a spring effect for the flip
+                }}
+                whileHover={{ rotateY: 180 }} // Flip when hovered
+              >
+                <motion.img
+                  src={skill.logo}
+                  alt={`${skill.name} logo`}
+                  className="py-5 w-20 h-20 sm:w-24 sm:h-24 mb-4 rounded-full border-4 border-gray-300 dark:border-[#4a5568] shadow-md object-contain"
+                  initial={{ rotateY: 180 }} // Keep the icon initially flipped
+                  whileHover={{ rotateY: 0 }} // Return to normal on hover
+                  transition={{ duration: 0.3 }}
+                />
+                <p className="font-medium text-[#113264] dark:text-[#e2e8f0] text-center text-xs sm:text-base">
+                  {skill.name}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+      ))}
+    </section>
   );
 
 
