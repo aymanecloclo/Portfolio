@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/Portfolio/:match*",
+      "destination": "/Portfolio/index.html"
+    }
+  ]
+}
